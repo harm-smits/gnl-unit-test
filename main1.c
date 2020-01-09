@@ -10,13 +10,13 @@ int main() {
     char *line;
 
     line = 0;
-    ret = get_next_line(&line);
+    ret = get_next_line(0, &line);
     while (ret > 0) {
         write(1, line, strlen(line));
         write(1, "\n", 1);
         free(line);
         line = 0;
-        ret = get_next_line(&line);
+        ret = get_next_line(0, &line);
     }
     if (ret == 0) {
         write(1, line, strlen(line));
